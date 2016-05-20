@@ -27,7 +27,7 @@ var platform = "FIREFOX"; // "BROWSERSTACK";  //"CHROME";  // process.env.PLATFO
 	    console.log('HE**YU**CHEN: OUTPUT STARTS.');
 		console.log('HE**YU**CHEN: ENV MODE IS: ' + process.env.mode);
 		console.log('HE**YU**CHEN: ENV USERNAME IS: ' + process.env.USERNAME);
-		console.log('HE**YU**CHEN: ENV AUTOMATE_KEY IS: ' + process.env.ENV.AUTOMATE_KEY);
+		console.log('HE**YU**CHEN: ENV AUTOMATE_KEY IS: ' + process.env.AUTOMATE_KEY);
 		console.log('HE**YU**CHEN: OUTPUT COMPLETES.');
 	 
  return new webdriver.Builder().
