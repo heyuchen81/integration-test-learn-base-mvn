@@ -4,5 +4,5 @@ Feature: Searching for cucumbers
   I want to be able to search for information about cucumbers
   
   Scenario: Google cucumber search
-    When I search Google for "inter milan"
+    When I search Google for "boston"
     Then I should see some results
