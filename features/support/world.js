@@ -2,51 +2,39 @@
 
 var fs = require('fs');
 var webdriver = require('selenium-webdriver');
-var platform = "BROWSERSTACK"; // "FIREFOX"; //"CHROME";  // process.env.PLATFORM || "CHROME";
+var platform = "BROWSERSTACK"; // "FIREFOX"; //"CHROME"; //
+								// process.env.PLATFORM || "CHROME";
 
-// var buildAndroidDriver = function() {
-// return new webdriver.Builder().
-// usingServer('http://localhost:4723/wd/hub').
-// withCapabilities({
-// platformName: 'Android',
-// platformVersion: '4.4',
-// deviceName: 'Android Emulator',
-// browserName: 'Chrome'
-// }).
-// build();
-// };
-//
- var buildChromeDriver = function() {
- return new webdriver.Builder().
- withCapabilities(webdriver.Capabilities.chrome()).
- build();
- };
+var buildAndroidDriver = function() {
+	return new webdriver.Builder() //.usingServer('http://localhost:4723/wd/hub')
+			.withCapabilities({
+				platformName : 'Android',
+				platformVersion : '4.4',
+				deviceName : 'Android Emulator',
+				browserName : 'Chrome'
+			}).build();
+};
 
- var buildFirefoxDriver = function() {
-	 
-//	    console.log('HE**YU**CHEN: OUTPUT STARTS.');
-//		console.log('HE**YU**CHEN: ENV MODE IS: ' + process.env.mode);
-//		console.log('HE**YU**CHEN: ENV USERNAME IS: ' + process.env.USERNAME);
-//		console.log('HE**YU**CHEN: ENV AUTOMATE_KEY IS: ' + process.env.AUTOMATE_KEY);
-//		console.log('HE**YU**CHEN: OUTPUT COMPLETES.');
-	 
- return new webdriver.Builder().
- withCapabilities(webdriver.Capabilities.firefox()).
- build();
- };
+var buildChromeDriver = function() {
+	return new webdriver.Builder().withCapabilities(
+			webdriver.Capabilities.chrome()).build();
+};
+
+var buildFirefoxDriver = function() {
+	return new webdriver.Builder().withCapabilities(
+			webdriver.Capabilities.firefox()).build();
+};
 
 var buildBrowserStackDriver = function() {
 
-	
 	var capabilities = {
-		// 'browserName' : 'chrome',
-			'browserName' : 'IE',
-			 'browser_version' : '8.0',
-			 'os' : 'Windows',
-			 'os_version' : '7',
-			 'resolution' : '1024x768',
-		'browserstack.user' : process.env.USERNAME, // 'xinhe1',
-		'browserstack.key' : process.env.AUTOMATE_KEY, // 'myHB39JW5AqqzGMhAzzT',
+		'browserName' : 'IE',
+		'browser_version' : '8.0',
+		'os' : 'Windows',
+		'os_version' : '7',
+		'resolution' : '1024x768',
+		'browserstack.user' : process.env.USERNAME,
+		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
 	};
 	return new webdriver.Builder().usingServer(
@@ -55,15 +43,15 @@ var buildBrowserStackDriver = function() {
 };
 
 switch (platform) {
-// case 'ANDROID':
-// var driver = buildAndroidDriver();
-// break;
- case 'FIREFOX':
- var driver = buildFirefoxDriver();
- break;
- case 'CHROME':
- var driver = buildChromeDriver();
- break;
+case 'ANDROID':
+	var driver = buildAndroidDriver();
+	break;
+case 'FIREFOX':
+	var driver = buildFirefoxDriver();
+	break;
+case 'CHROME':
+	var driver = buildChromeDriver();
+	break;
 default:
 	var driver = buildBrowserStackDriver();
 }
