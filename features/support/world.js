@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var webdriver = require('selenium-webdriver');
-var platform = "BROWSERSTACK"; // "FIREFOX";   //"CHROME";  // process.env.PLATFORM || "CHROME";
+var platform = "BROWSERSTACK"; // "FIREFOX"; //"CHROME";  // process.env.PLATFORM || "CHROME";
 
 // var buildAndroidDriver = function() {
 // return new webdriver.Builder().
@@ -39,7 +39,12 @@ var buildBrowserStackDriver = function() {
 
 	
 	var capabilities = {
-		'browserName' : 'chrome',
+		// 'browserName' : 'chrome',
+			'browserName' : 'IE',
+			 'browser_version' : '8.0',
+			 'os' : 'Windows',
+			 'os_version' : '7',
+			 'resolution' : '1024x768',
 		'browserstack.user' : process.env.USERNAME, // 'xinhe1',
 		'browserstack.key' : process.env.AUTOMATE_KEY, // 'myHB39JW5AqqzGMhAzzT',
 		'browserstack.debug' : 'true'
