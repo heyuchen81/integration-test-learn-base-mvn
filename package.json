@@ -1,0 +1,36 @@
+{
+  "name": "learn-base-mvn",
+  "version": "1.0.0",
+  "description": "An integration test learned from https://github.com/Matt-B/cucumber-js-selenium-webdriver-example to use webdriver.js + cucumber.js and Maven to run a simple google search.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyuchen81/integration-test-learn-base-mvn.git"
+  },
+  "keywords": [
+    "cucumberjs",
+    "webdriverjs",
+    "maven"
+  ],
+  "author": "XinHe <xin.he@ingenta.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heyuchen81/integration-test-learn-base-mvn/issues"
+  },
+  "homepage": "https://github.com/heyuchen81/integration-test-learn-base-mvn#readme",
+  	"devDependencies": {
+		"cucumber": "^0.10.2",
+		"selenium-webdriver": "^2.53.2",
+		"chai": "^3.5.0",
+		"grunt": "^1.0.1",
+		"grunt-cli": "^1.2.0",
+		"grunt-contrib-jshint": "^1.0.0",
+		"grunt-exec": "^0.4.7",
+		"grunt-env": "^0.4.4",
+		"sanitize-filename": "^1.6.0",
+		"appium": "^1.5.2"
+	}
+}
