@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var webdriver = require('selenium-webdriver');
-var platform = "FIREFOX"; // "BROWSERSTACK";  //"CHROME";  // process.env.PLATFORM || "CHROME";
+var platform = "BROWSERSTACK"; // "FIREFOX";   //"CHROME";  // process.env.PLATFORM || "CHROME";
 
 // var buildAndroidDriver = function() {
 // return new webdriver.Builder().
@@ -24,11 +24,11 @@ var platform = "FIREFOX"; // "BROWSERSTACK";  //"CHROME";  // process.env.PLATFO
 
  var buildFirefoxDriver = function() {
 	 
-	    console.log('HE**YU**CHEN: OUTPUT STARTS.');
-		console.log('HE**YU**CHEN: ENV MODE IS: ' + process.env.mode);
-		console.log('HE**YU**CHEN: ENV USERNAME IS: ' + process.env.USERNAME);
-		console.log('HE**YU**CHEN: ENV AUTOMATE_KEY IS: ' + process.env.AUTOMATE_KEY);
-		console.log('HE**YU**CHEN: OUTPUT COMPLETES.');
+//	    console.log('HE**YU**CHEN: OUTPUT STARTS.');
+//		console.log('HE**YU**CHEN: ENV MODE IS: ' + process.env.mode);
+//		console.log('HE**YU**CHEN: ENV USERNAME IS: ' + process.env.USERNAME);
+//		console.log('HE**YU**CHEN: ENV AUTOMATE_KEY IS: ' + process.env.AUTOMATE_KEY);
+//		console.log('HE**YU**CHEN: OUTPUT COMPLETES.');
 	 
  return new webdriver.Builder().
  withCapabilities(webdriver.Capabilities.firefox()).
@@ -40,8 +40,8 @@ var buildBrowserStackDriver = function() {
 	
 	var capabilities = {
 		'browserName' : 'chrome',
-		'browserstack.user' : 'xinhe1',
-		'browserstack.key' : 'myHB39JW5AqqzGMhAzzT',
+		'browserstack.user' : process.env.USERNAME, // 'xinhe1',
+		'browserstack.key' : process.env.AUTOMATE_KEY, // 'myHB39JW5AqqzGMhAzzT',
 		'browserstack.debug' : 'true'
 	};
 	return new webdriver.Builder().usingServer(
