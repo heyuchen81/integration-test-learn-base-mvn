@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var webdriver = require('selenium-webdriver');
-var platform = "FIREFOX"; // "BROWSERSTACK"; // "FIREFOX"; //"CHROME"; //
+var platform = "BROWSERSTACK"; // "FIREFOX"; //"CHROME"; //
 								// process.env.PLATFORM || "CHROME";
 
 var buildAndroidDriver = function() {
