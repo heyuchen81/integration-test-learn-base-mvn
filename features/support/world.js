@@ -35,7 +35,7 @@ var buildBrowserStackDriver = function() {
 //		'resolution' : '1024x768',
 			'browserName' : 'iPhone',
 			 'platform' : 'MAC',
-			 'device' : 'iPhone 6S Plus'
+			 'device' : 'iPhone 6S Plus',
 		'browserstack.user' : process.env.USERNAME,
 		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
